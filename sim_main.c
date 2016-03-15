@@ -92,7 +92,7 @@ void exec_asm(char instr[], int8_t ops[][2]){
 				cycle_count++;
 			break;
 			case 'J':
-				printf("Infinite jumps..at %d, jumping to instr %d\n", ip, ops[ip][0]);
+				//printf("Infinite jumps..at %d, jumping to instr %d\n", ip, ops[ip][0]);
 				ip = ops[ip][0];
 				cycle_count++;
 			break;
@@ -166,7 +166,7 @@ int main(int argc, char* argv[]){
 			str_token++;
 			ops[i][0] = (int8_t)atoi(str_token);
 			str_token = strtok(NULL, " ");
-			if(str_token[0] = 'R'){
+			if(str_token[0] == 'R'){
 				str_token++;
 				instr[i] = 'a';
 			}
